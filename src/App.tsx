@@ -9,6 +9,10 @@ import "./index.css";
 import AuthRoute from "./components/AuthRoute";
 import EntryPage from "./pages/EntryPage";
 import AboutPage from "./pages/AboutPage";
+import LiquidityPoolsPage from "./pages/LiquidityPoolsPage";
+import DexPage from "./pages/DexPage";
+import TokenizePage from "./pages/TokenizePage";
+import { Settings } from "lucide-react";
 
 function App() {
   return (
@@ -17,6 +21,11 @@ function App() {
       <Route path="/login" element={<LoginPage />} />
             <Route path="/about" element={<AboutPage />} />
       <Route path="/home" element={<AuthRoute><HomePage /></AuthRoute>} />
+            <Route path="/liquidity_pools" element={<AuthRoute><LiquidityPoolsPage /></AuthRoute>} />
+      <Route path="/dex" element={<AuthRoute><DexPage /></AuthRoute>} />
+      <Route path="/tokenize" element={<AuthRoute><TokenizePage /></AuthRoute>} />
+      <Route path="/settings" element={<AuthRoute><Settings /></AuthRoute>} />
+
     </Routes>
   );
 }

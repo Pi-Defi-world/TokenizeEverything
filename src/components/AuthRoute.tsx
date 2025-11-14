@@ -22,37 +22,7 @@ const AuthRoute: React.FC<AuthRouteProps> = ({ children }) => {
 
   useEffect(() => {
     const checkLoginState = async () => {
-      const is_signed_in = localStorage.getItem("is_signed_in");
-      const isSignedInWithDemo = localStorage.getItem("isSignedInWithDemo");
-      if (is_signed_in === "true"||isSignedInWithDemo==="true") {
-        setLoading(true);
-        try {
-          const { isNewUser, ...userGlobalData } =
-            await tokenizeProvider.signInWithPi(isSignedInWithDemo==="true");
-          dispatch(setUserGlobalData(userGlobalData));
-
-          if (isNewUser) {
-            const isFirstTime = localStorage.getItem("isFirstTime");
-            if (
-              isFirstTime !== "false" &&
-              !userGlobalData?.userData
-            ) {
-              navigate("/onboarding");
-              return;
-            }
-          }
-          setLoading(false);
-        } catch (error) {
-          console.error("Auto sign-in failed", error);
-          localStorage.removeItem("is_signed_in");
-          localStorage.removeItem("isSignedInWithDemo");
-          navigate("/about");
-        } finally {
-          setLoading(false);
-        }
-      } else {
-        navigate("/about");
-      }
+      setLoading(false)
     };
     if (!userGlobalData?.userData?.uid) checkLoginState();
   }, []);

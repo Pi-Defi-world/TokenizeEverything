@@ -16,7 +16,7 @@ const DesktopHeader: React.FC = () => {
       <header className="sticky top-0 z-50 hidden md:flex justify-between items-center p-4 bg-slate-900 text-white border-b border-slate-800">
         <div>
           {/* Placeholder for Logo or Branding */}
-          <h1 className="text-xl font-bold">DreamWorld</h1>
+          <h1 className="text-xl font-bold">Tokenize</h1>
         </div>
         <div className="flex items-center gap-4">
           <FluxCredits />

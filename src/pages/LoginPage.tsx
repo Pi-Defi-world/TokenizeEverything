@@ -25,7 +25,7 @@ export default function LoginPage() {
       await new Promise((resolve) => setTimeout(resolve, 1500))
       localStorage.setItem("isSignedIn", "true")
       localStorage.setItem("walletConnected", "true")
-      navigate("/dashboard")
+      navigate("/home")
     } catch (err: any) {
       setError(err.message || "Failed to connect wallet.")
     } finally {
